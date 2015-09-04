@@ -11,11 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150903191901) do
+ActiveRecord::Schema.define(version: 20150904144044) do
+
+  create_table "coordinates", force: :cascade do |t|
+    t.decimal  "lat"
+    t.decimal  "lon"
+    t.integer  "locatable_id"
+    t.string   "locatable_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "foursquares", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "neighborhoods", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "url"
+    t.string   "slug"
+    t.string   "twitter_url"
+    t.string   "twitter_bio"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
