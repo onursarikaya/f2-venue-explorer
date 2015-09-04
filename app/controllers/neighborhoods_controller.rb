@@ -8,8 +8,8 @@ class NeighborhoodsController < ApplicationController
   end
 
   def show
-  @area = Neighborhood.find(params[:id])
-  @filters = ['Hotel']
-end
+    @area = Neighborhood.find(params[:id])
+    @filters = ['Hotel']
+  end
 
 end
